@@ -3,14 +3,9 @@ import { StaticImage } from 'gatsby-plugin-image'
 import Slider from 'react-slick'
 
 import * as styles from './assets/styles.module.css'
-import { Overlay } from '../Common'
-import AdvantagesIcon1 from './assets/advantages-1.svg'
-import AdvantagesIcon2 from './assets/advantages-2.svg'
-import AdvantagesIcon3 from './assets/advantages-3.svg'
-import AdvantagesIcon4 from './assets/advantages-4.svg'
-import AdvantagesIcon5 from './assets/advantages-5.svg'
-import AdvantagesIcon6 from './assets/advantages-6.svg'
+import { List, ListItem, Overlay } from '../Common'
 import PortfolioCells from '../Portfolio/assets/overlay.svg'
+import AdvantagesIcon from './AdvantagesIcon'
 
 const History = () => (
   <div>
@@ -87,7 +82,7 @@ const About = () => {
                 <button className={styles.navItem + ' ' + (currentTab === 'history' && styles.active)} onClick={() => setCurrentTab('history')}>История компании</button>
               </li>
               <li>
-                <button className={styles.navItem + ' ' + (currentTab === 'now' && styles.active)} onClick={() => setCurrentTab('now')}>Солид лизинг сегодня</button>
+                <button className={styles.navItem + ' ' + (currentTab === 'now' && styles.active)} onClick={() => setCurrentTab('now')}>Солид–Лизинг сегодня</button>
               </li>
               <li>
                 <button className={styles.navItem + ' ' + (currentTab === 'mission' && styles.active)} onClick={() => setCurrentTab('mission')}>Миссия</button>
@@ -144,33 +139,26 @@ const About = () => {
           </div>
         </div>
         <div className="mt-12 lg:mt-0">
-          <h3 style={{textShadow: "0px 4px 4px rgba(69, 27, 98, 0.15)"}} className="text-dark-fucsia text-2xl lg:text-3xl xl:text-4xl leading-none font-extrabold mb-16">Наши приемущества</h3>
-          <div className="flex -mx-2 flex-wrap w-full lg:h-40 content-between">
-            <div className="flex flex-col mb-8 xl:mb-0 px-2 w-1/2 lg:flex-row xl:w-4/12 items-center">
-              <AdvantagesIcon1 style={{width: 54, height: 54}} className="flex-none mb-2 lg:mb-0 lg:mr-14" />
-              <span className="font-poiret text-lg text-center lg:text-left lg:text-xl text-black">Электронный документооборот</span>
-            </div>
-            <div className="flex flex-col mb-8 xl:mb-0 px-2 w-1/2 lg:flex-row xl:w-4/12 items-center">
-              <AdvantagesIcon2 style={{width: 54, height: 54}} className="flex-none mb-2 lg:mb-0 lg:mr-14" />
-              <span className="font-poiret text-lg text-center lg:text-left lg:text-xl text-black">Отсутствие скрытых комиссий</span>
-            </div>
-            <div className="flex flex-col mb-8 xl:mb-0 px-2 w-1/2 lg:flex-row xl:w-4/12 items-center">
-              <AdvantagesIcon3 style={{width: 54, height: 54}} className="flex-none mb-2 lg:mb-0 lg:mr-14" />
-              <span className="font-poiret text-lg text-center lg:text-left lg:text-xl text-black">Субсидии Минпромторга до 12,5%</span>
-            </div>
-            <div className="flex flex-col mb-8 xl:mb-0 px-2 w-1/2 lg:flex-row xl:w-4/12 items-center">
-              <AdvantagesIcon4 style={{width: 54, height: 54}} className="flex-none mb-2 lg:mb-0 lg:mr-14" />
-              <span className="font-poiret text-lg text-center lg:text-left lg:text-xl text-black">Значительные скидки от поставщиков</span>
-            </div>
-            <div className="flex flex-col mb-8 xl:mb-0 px-2 w-1/2 lg:flex-row xl:w-4/12 items-center">
-              <AdvantagesIcon5 style={{width: 54, height: 54}} className="flex-none mb-2 lg:mb-0 lg:mr-14" />
-              <span className="font-poiret text-lg text-center lg:text-left lg:text-xl text-black">Индивидуальный подход</span>
-            </div>
-            <div className="flex flex-col mb-8 xl:mb-0 px-2 w-1/2 lg:flex-row xl:w-4/12 items-center">
-              <AdvantagesIcon6 style={{width: 54, height: 54}} className="flex-none mb-2 lg:mb-0 lg:mr-14" />
-              <span className="font-poiret text-lg text-center lg:text-left lg:text-xl text-black">Скоринговая система оценки по сделкам до 5 млн рублей</span>
-            </div>
-          </div>
+          <h3 style={{textShadow: "0px 4px 4px rgba(69, 27, 98, 0.15)"}} className="text-dark-fucsia text-2xl lg:text-3xl xl:text-4xl leading-none font-extrabold mb-16">Наши преимущества</h3>
+          <List className="flex-wrap w-full lg:h-40 content-between">
+            {[
+              {icon: 'document', text: 'Электронный документооборот'},
+              {icon: 'transparency', text: 'Отсутствие скрытых комиссий'},
+              {icon: 'gift', text: 'Субсидии Минпромторга до 12,5%'},
+              {icon: 'income', text: 'Значительные скидки от поставщиков'},
+              {icon: 'individual', text: 'Индивидуальный подход'},
+              {icon: 'personal', text: 'Скоринговая система оценки по сделкам до 5 млн рублей'},
+              
+            ].map(item => {
+                return (
+                  <ListItem className="flex-col mb-8 xl:mb-0 w-1/2 lg:flex-row xl:w-4/12 items-center">
+                    <AdvantagesIcon iconName={item.icon} style={{width: 54, height: 54}} className="flex-none mb-2 lg:mb-0 lg:mr-14" />
+                    <span className="font-poiret text-lg text-center lg:text-left lg:text-xl text-black">{item.text}</span>
+                  </ListItem>
+                )
+              })
+            }
+          </List>
         </div>
       </div>
   </section>

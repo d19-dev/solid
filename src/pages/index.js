@@ -56,7 +56,7 @@ const IndexPage = ({ data, location }) => {
           </div>
         </div>
       </Menu>
-      <Seo title="Home" />
+      <Seo title="Новые рубежи" />
       <div id="page-wrap">
         <Element name="main">
           <Main toggleMainMenu={toggleMainMenu} />

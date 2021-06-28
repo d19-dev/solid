@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Солид–Лизинг и наши инвесторы`,
+    description: `Солид Лизинг для инвесторов, лизинг авто москва, инвесторам, выгодная аренда автомобилей для ИП и машины в лизинг`,
+    author: `d19.cvtk`,
   },
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
@@ -19,6 +20,13 @@ module.exports = {
       options: {
         name: `posts`,
         path: `${__dirname}/content/blog/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `sections`,
+        path: `${__dirname}/content/sections/`,
       },
     },
     {

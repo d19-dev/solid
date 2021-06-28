@@ -1,0 +1,16 @@
+backend:
+  name: github
+  repo: https://github.com/d19-dev/solid.git
+  branch: master
+media_folder: /static/
+public_folder: /
+collections:
+  - name: blog
+    label: Блог
+    folder: /content/blog/
+    create: true
+    fields:
+      - { name: title, label: Заголовок новости }
+      - { name: date, label: Дата публикации, widget: datetime }
+      - { name: featuredImage, label: Изображение, widget: image }
+      - { name: body, label: Текст публикации, widget: markdown }

@@ -80,7 +80,7 @@ const Main = ({toggleMainMenu}) => (
               <div>
                 <h1 className={styles.siteTitle}>Новые рубежи</h1>
                 <Devider className="h-2 lg:h-12" />
-                <h2 className="font-poiret text-2xl lg:text-5xl text-white text-center">Солид–лизинг и наши инвесторы</h2>
+                <h2 className="font-poiret text-2xl lg:text-5xl text-white text-center">Солид–Лизинг и наши инвесторы</h2>
               </div>
             </div>
           </article>
@@ -96,15 +96,12 @@ const Main = ({toggleMainMenu}) => (
           <div className="hidden lg:block flex-grow">
             <div className="flex h-full justify-center items-center">
               <div className="transform -rotate-90">
-                <ul className="flex w-64 justify-between font-bold text-white ">
+                <ul className="flex w-40 justify-between font-bold text-white ">
                   <li>
-                    <a href="#">vk</a>
+                    <a href="mailto:bonds@solid-leasing.ru">email</a>
                   </li>
                   <li>
-                    <a href="#">facebook</a>
-                  </li>
-                  <li>
-                    <a href="#">instagram</a>
+                    <a href="https://www.instagram.com/solid_leasing/" target="_blank">instagram</a>
                   </li>
                 </ul>
               </div>

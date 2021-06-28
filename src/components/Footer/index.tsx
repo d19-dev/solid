@@ -24,9 +24,13 @@ const Footer = () => (
         </div>
         <div className="md:w-1/2 lg:w-4/12">
           <p className="font-ligth text-white mb-5 leading-loose">Подпишитесь на рассылку новостей и событий</p>
-          <form className="flex">
-            <input placeholder="Адрес эл. почты" className="w-8/12 md:w-3/4 border rounded-l-sm p-2.5 bg-gray-50 leading-none focus:outline-none text-deep-purple" style={{borderColor: "rgba(49, 21, 76, 0.42)"}} type="text" />
-            <button className="w-4/12 md:w-1/4 border rounded-r-sm bg-gray-50 text-deep-purple" style={{borderColor: "rgba(49, 21, 76, 0.42)"}}>Отправить</button>
+          <form className="flex" method="POST" action="https://cp.unisender.com/ru/subscribe?hash=6wojxmuu198tuhisio8ma5opcpdepnusr9oznfbhjt5q74yjuw3jo" name="subscribtion_form">
+            <input placeholder="Адрес эл. почты" className="w-8/12 md:w-3/4 border rounded-l-sm p-2.5 bg-gray-50 leading-none focus:outline-none text-deep-purple" style={{borderColor: "rgba(49, 21, 76, 0.42)"}} type="text" name="email" />
+            <input className="w-4/12 md:w-1/4 border rounded-r-sm bg-gray-50 text-deep-purple" style={{borderColor: "rgba(49, 21, 76, 0.42)"}} type="submit"  value="Подписаться" />
+            <input type="hidden" name="charset" value="UTF-8" />
+            <input type="hidden" name="default_list_id" value="1" />
+            <input type="hidden" name="overwrite" value="2" />
+            <input type="hidden" name="is_v5" value="1" />
           </form>
         </div>
         <div className="hidden lg:flex w-3/12 justify-end">
