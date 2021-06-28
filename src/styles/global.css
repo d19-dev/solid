@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slick-dots {
+  bottom: 20px;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  margin: 0 4px;
+  padding: 0;
+  cursor: pointer;
+  width: 32px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  @apply transition-all;
+}
+
+.slick-dots li.slick-active, .slick-dots li:hover {
+  height: 8px;
+}
+
+.nav-item {
+  @apply bg-white mx-auto cursor-pointer w-2.5 h-2.5 rounded-lg transition-all mb-4;
+}
+
+.link {
+  display: block;
+}
+
+.active div, .nav-item:hover  {
+  @apply bg-deep-purple;
+}
+
+.bm-burger-button {
+  display: none;
+}

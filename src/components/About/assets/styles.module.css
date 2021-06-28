@@ -1,0 +1,32 @@
+.list li:before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  vertical-align: middle;
+  margin-right: .75rem;
+  @apply bg-deep-purple;
+}
+
+.list li {
+  margin-left: 1rem;
+}
+
+.nav-item {
+  @apply font-light focus:outline-none relative mb-2 lg:mb-0
+}
+
+.nav-item:after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 1px;
+  @apply bg-deep-purple transition-all mx-auto
+}
+
+.active:after {
+  width: 100%;
+}

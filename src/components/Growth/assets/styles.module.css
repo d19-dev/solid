@@ -1,0 +1,13 @@
+.list li:before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  vertical-align: middle;
+  margin-right: .75rem;
+  @apply bg-light-fucsia;
+}
+
+.list li {
+  margin-left: 1rem;
+}

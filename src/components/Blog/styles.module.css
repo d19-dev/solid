@@ -1,0 +1,15 @@
+.blog-item {
+  display: inline;
+}
+
+.scaled {
+  @apply transition-transform;
+  @apply ease-in-out;
+  @apply duration-1000;
+  @apply delay-100;
+  @apply transform-gpu;
+}
+
+.blog-item:hover .scaled {
+  @apply scale-110;
+}
