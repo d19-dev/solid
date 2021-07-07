@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: https://github.com/d19-dev/solid.git
   branch: master
 media_folder: /static/
