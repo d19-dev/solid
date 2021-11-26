@@ -2,7 +2,6 @@ import * as React from 'react'
 import { Element, Link } from 'react-scroll'
 import { graphql } from "gatsby"
 import { slide as Menu } from 'react-burger-menu'
-
 import Seo from "../components/seo"
 import Main from '../components/Main'
 import About from '../components/About'
@@ -14,8 +13,7 @@ import LogoIcon from '../svg/logo.svg'
 import { Overlay } from '../components/Common'
 
 const IndexPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const posts = data.allWpPost.nodes
   const [menuIsOpen, setMenuOpened] = React.useState(false)
   const toggleMainMenu = () => setMenuOpened(!menuIsOpen)
   const closeMainMenu = () => setMenuOpened(false)
@@ -71,7 +69,7 @@ const IndexPage = ({ data, location }) => {
           <Blog posts={posts} />
         </Element>
         <Element name="growth">
-          <Growth />
+          <Growth posts={posts} />
         </Element>
         <Element name="contacts">
           <Footer />
@@ -85,24 +83,35 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allWpPost(sort: {fields: date, order: DESC}) {
       nodes {
-        excerpt(pruneLength: 100)
-        fields {
-          slug
+        id
+        title
+        excerpt
+        databaseId
+        date
+        featuredImage {
+          node {
+            id
+            altText
+            srcSet
+            sizes
+            sourceUrl
+          }
         }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-          featuredImage
+        terms {
+          nodes {
+            name
+            slug
+          }
+        }
+        tags {
+          nodes {
+            name
+            slug
+          }
         }
       }
     }
-  }
+  }  
 `

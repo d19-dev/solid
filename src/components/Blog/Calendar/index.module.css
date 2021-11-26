@@ -1,0 +1,153 @@
+.root {
+  position: relative;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 2rem;
+}
+
+@media only screen and (min-width: 640px) {
+  .wrapper {
+    grid-template-columns: 4fr 4fr;
+    grid-template-rows: auto;
+    column-gap: 2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: 3fr 5fr;
+    grid-template-rows: auto;
+    column-gap: 2rem;
+  }
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 1rem;
+}
+
+.month {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: auto;
+  justify-self: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 12rem;
+}
+
+.nav {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.currentMonth {
+  color: #4F3766;
+  font-weight: bold;
+  line-height: 1;
+  user-select: none;
+  text-transform: capitalize;
+}
+
+.weekdays {
+  display: grid;
+  user-select: none;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weekday {
+  color: #180D31;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+.weekday.weekend {
+  color: #CB4962;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 2.25rem);
+  row-gap: 1px;
+  column-gap: 1px;
+  background-color: #d1ced8;
+}
+
+.day {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: #180D31;
+  line-height: 1;
+  font-size: 0.875rem;
+  user-select: none;
+  background-color: #fff;
+}
+
+.day.selected {
+  margin: -1px;
+  border: 1px solid #902768;
+  background-color: #e6d9e0;
+}
+
+.day.offset {
+  color: #A5A1AF;
+}
+
+.events {
+  margin-top: 2.5rem;
+  row-gap: 1.25rem;
+  overflow-y: auto;
+  max-height: 14rem;
+}
+
+.events::-webkit-scrollbar {
+  width: .5rem;
+}
+
+.events::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.events::-webkit-scrollbar-thumb {
+  background-color: #826a94;
+  outline: 1px solid #614774;
+}
+
+.event {
+  display: grid;
+  grid-template-rows: 1.25rem auto;
+  row-gap: .125rem;
+}
+
+.event:not(:first-child) {
+  margin-top: 1.25rem;
+}
+
+.eventDate {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: .25rem;
+  color: #902768;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.eventText {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #180D31;
+  line-height: 1.5;
+}

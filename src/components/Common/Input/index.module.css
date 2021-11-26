@@ -1,0 +1,27 @@
+.root {
+  position: relative;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  border: 1px solid #451B62;
+  border-radius: 1.75rem;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.input {
+  padding: 0.5rem 1rem;
+  line-height: 1;
+  font-weight: 600;
+  color: #9A97A4;
+  border-radius: 1.75rem;
+  transition: box-shadow .5s ease-in-out;
+}
+
+.input:focus{
+  outline: none;
+  box-shadow: inset 0px 0px 4px 2px rgba(79, 55, 102, 0.25);
+}

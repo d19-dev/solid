@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `Солид–Лизинг и наши инвесторы`,
@@ -5,7 +7,14 @@ module.exports = {
     author: `d19.cvtk`,
   },
   plugins: [
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url:
+          process.env.GRAPHQL_URL ||
+          `https://wpgatsbydemo.wpengine.com/graphql`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {

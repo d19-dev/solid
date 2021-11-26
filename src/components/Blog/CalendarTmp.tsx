@@ -191,22 +191,19 @@ const calendar: Year = [
     ]
   },
   {
-    title: 'Октябрь',
+    title: 'Ноябрь',
     days: [
-      { date: 27 },
-      { date: 28 },
-      { date: 29 },
       { date: 1 },
       { date: 2 },
       { date: 3 },
       { date: 4 },
-      { date: 5, event: 'Приобретение биржевых облигаций серии БО-001-02 по требованию владельцев', dateString: '5 октября' },
-      { date: 6, event: 'Выплата купонного дохода по коммерческим облигациям серии КО-СЛ-007', dateString: '6 октября' },
+      { date: 5 },
+      { date: 6 },
       { date: 7 },
-      { date: 8 },
+      { date: 8, event: 'Выплата купонного дохода по коммерческим облигациям серии КО-СЛ-004', dateString: '8 ноября' },
       { date: 9 },
       { date: 10 },
-      { date: 11 },
+      { date: 11, event: 'Приобретение коммерческих облигаций серии КО-СЛ-004 по требованию владельцев', dateString: '11 ноября' },
       { date: 12 },
       { date: 13 },
       { date: 14 },
@@ -214,7 +211,7 @@ const calendar: Year = [
       { date: 16 },
       { date: 17 },
       { date: 18 },
-      { date: 19, event: 'Выплата купонного дохода по биржевым облигациям серии БО-001-01', dateString: '19 октября' },
+      { date: 19 },
       { date: 20 },
       { date: 21 },
       { date: 22 },
@@ -226,11 +223,15 @@ const calendar: Year = [
       { date: 28 },
       { date: 29 },
       { date: 30 },
-      { date: 31 },
+      { date: 1 },
+      { date: 2 },
+      { date: 3 },
+      { date: 4 },
+      { date: 5 },
     ]
   },
   {
-    title: 'Октябрь',
+    title: 'Декабрь',
     days: [
       { date: 27 },
       { date: 28 },
@@ -276,7 +277,7 @@ const Calendar = () => {
   const currentMonth = calendar[today.getMonth()]
   return (
     <div className="flex flex-col md:flex-row -mx-2 h-full items-center lg:items-end">
-      <div className="flex-none px-2 h-full" style={{ width: 290 }}>
+      <div className="flex-none px-2 lg:h-full" style={{ width: 290 }}>
         <h5 className="font-bold mb-5 text-center text-dark-fucsia">{currentMonth.title}</h5>
         <div className="flex flex-wrap relative">
           <Overlay>
@@ -296,7 +297,7 @@ const Calendar = () => {
           })}
         </div>
       </div>
-      <div className="lg:h-64 lg:overflow-y-auto px-2 lg:ml-4">
+      <div className="lg:h-full lg:overflow-y-auto px-2 lg:ml-4">
         {currentMonth.days.map(day => {
           if (day.event)
             return (

@@ -1,0 +1,29 @@
+.root {
+  position: relative;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: 
+  "icon date"
+  ". excerpt";
+  row-gap: .25rem;
+  column-gap: .5rem;
+  align-items: center;
+}
+
+.icon {
+  grid-area: icon;
+}
+
+.date {
+  grid-area: date;
+  font-weight: 600;
+  line-height: 1;
+  color: #902768;
+}
+
+.excerpt {
+  grid-area: excerpt;
+}

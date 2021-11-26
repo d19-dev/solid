@@ -1,0 +1,140 @@
+:root {
+  --sld-scale-x: 1;
+  --sld-scale-y: 1;
+  --sld-overlay-fill: 0;
+}
+
+.root {
+  position: relative;
+  height: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.root:hover {
+  --sld-scale-x: 1.1;
+  --sld-scale-y: 1.1;
+  --sld-overlay-fill: 75%;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 1000ms;
+  transition-delay: 100ms;
+  transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(var(--sld-scale-x)) scaleY(var(--sld-scale-y));
+}
+
+.overlay {
+  position: relative;
+  height: 100%;
+  background:linear-gradient(180deg, rgba(83, 53, 119, 0.13) 0%, rgba(24, 14, 49, 0.43) 47.33%, #180E31 100%);
+}
+
+.overlay:after {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition-delay: 100ms;
+  transition: opacity .75s ease-in-out;
+  background-color: #180E31;
+  opacity: var(--sld-overlay-fill);
+}
+
+.article {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.meta {
+  position: absolute;
+  top: calc(100% - 40px);
+  display: grid;
+  grid-template-rows: 2.5rem auto;
+  row-gap: 1rem;
+  width: 100%;
+  height: 100%;
+  justify-items: start;
+  align-items: start;
+  transition: top .5s;
+}
+
+.root:hover .meta {
+  top: 0;
+}
+
+.date {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: .25rem;
+  color: #902768;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.75rem 1.375rem;
+  background-color: white;
+}
+
+.day {
+  font-size: inherit;
+}
+
+.month {
+  font-size: inherit;
+}
+
+.excerpt {
+  padding: 0 1.375rem;
+  color: #FAFAFA;
+  font-size: 0.875rem;
+}
+
+.root._small .overlay {
+  background: rgba(69, 27, 98, 0.8);
+}
+
+.root._small .overlay:after {
+  display: none;
+}
+
+.root._small .date {
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  color: #FAFAFA;
+  background-color: transparent;
+  font-weight: 900;
+  justify-items: center;
+}
+
+.root._small .date .day {
+  font-size: 3rem;
+}
+
+.root._small .date .month {
+  font-size: 1.5rem;
+}
+
+.root._small .meta {
+  top: 0;
+  grid-template-rows: 100% auto;
+  row-gap: 0;
+  justify-items: center;
+  align-items: center;
+}
+
+.root._small:hover .meta {
+  top: -100%;
+}
+
+.root._small .excerpt {
+  padding: 1.375rem;
+  font-size: 0.75rem;
+}
