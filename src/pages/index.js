@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import { slide as Menu } from 'react-burger-menu'
 import Seo from "../components/seo"
 import Main from '../components/Main'
+import Ad from '../components/Ad'
 import About from '../components/About'
 import Portfolio from '../components/Portfolio'
 import Blog from '../components/Blog'
@@ -39,7 +40,17 @@ const IndexPage = ({ data, location }) => {
               <Link onClick={() => closeMainMenu()} className="block py-2 hover:text-light-fucsia transition cursor-pointer" to="about">о компании</Link>
               <Link onClick={() => closeMainMenu()} className="block py-2 hover:text-light-fucsia transition cursor-pointer" to="news">новости инвестора</Link>
               <Link onClick={() => closeMainMenu()} className="block py-2 hover:text-light-fucsia transition cursor-pointer" to="growth">развитие</Link>
+              <a 
+                onClick={() => closeMainMenu()}
+                className="block py-2 hover:text-light-fucsia transition cursor-pointer"
+                href="https://www.e-disclosure.ru/portal/company.aspx?id=37460&attempt=1"
+                target="_blank">раскрытие информации</a>
               <Link onClick={() => closeMainMenu()} className="block py-2 hover:text-light-fucsia transition cursor-pointer" to="contacts">контакты</Link>
+              <a 
+                onClick={() => closeMainMenu()}
+                className="block py-2 hover:text-light-fucsia transition cursor-pointer"
+                href="http://solid-leasing.ru"
+                target="_blank">основной сайт</a>
             </div>
             <div>
               <div className="leading-loose px-8 text-white font-poiret">
@@ -59,6 +70,10 @@ const IndexPage = ({ data, location }) => {
         <Element name="main">
           <Main toggleMainMenu={toggleMainMenu} />
         </Element>
+        {/* <Element name="ad">
+          <Ad></Ad>
+        </Element> */}
+
         <Element name="about">
           <About />
         </Element>

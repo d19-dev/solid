@@ -10,6 +10,10 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
+        schema: {
+          timeout: 100000,
+          perPage: 20,
+        },
         url:
           process.env.GRAPHQL_URL ||
           `https://wpgatsbydemo.wpengine.com/graphql`,

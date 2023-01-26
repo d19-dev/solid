@@ -13,7 +13,7 @@ const Main = ({toggleMainMenu}) => (
   <section className="relative h-screen">
     <Overlay>
       <StaticImage
-        className="animate-zoom-in"
+        className="animate-zoom-in -left-mf -top-96 sm:left-0 sm:top-0"
         imgStyle={{
           objectFit: "none",
           objectPosition: "right bottom",
@@ -52,7 +52,7 @@ const Main = ({toggleMainMenu}) => (
       <div className="flex-grow">
         <div className="flex h-full flex-col">
           <nav className="hidden lg:flex justify-center items-center h-34">
-            <ul className="flex justify-between w-214 font-poiret text-2xl text-white">
+            <ul className="flex justify-between w-320 font-poiret text-2xl text-white">
               <li>
                 <Link to="about" smooth={true} className="cursor-pointer hover:text-light-fucsia transition">о компании</Link>
               </li>
@@ -61,6 +61,14 @@ const Main = ({toggleMainMenu}) => (
               </li>
               <li>
               <Link to="growth" smooth={true}  className="cursor-pointer hover:text-light-fucsia transition">развитие</Link>
+              </li>
+              <li>
+                <a href="https://www.e-disclosure.ru/portal/company.aspx?id=37460&attempt=1" target="_blank" className="cursor-pointer hover:text-light-fucsia transition">
+                  <div className="flex justify-center items-center">
+                    <span>раскрытие информации</span>
+                    <ExternalLinkIcon className="ml-2" />
+                  </div>
+                </a>
               </li>
               <li>
               <Link to="contacts" smooth={true}  className="cursor-pointer hover:text-light-fucsia transition">контакты</Link>

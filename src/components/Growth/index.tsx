@@ -50,6 +50,7 @@ const Growth: React.FC<Props> = ({
           <ul className={styles.list}>
             <li>Оптимизация бизнес-процессов в рамках обеспечения необходимых источников финансирования</li>
             <li>Расширение клиентской базы</li>
+            {/* <li><a href="https://www.e-disclosure.ru/portal/company.aspx?id=37460&attempt=1" target="_blabk">Раскрытие информации</a></li> */}
           </ul>
         </div>
         <div>

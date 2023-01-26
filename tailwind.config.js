@@ -36,10 +36,12 @@ module.exports = {
         'poiret': "Poiret One"
       },
       width: {
-        '214': '53.5rem'
+        '214': '53.5rem',
+        '320': '80rem',
       },
       spacing: {
         '34': '8.5rem',
+        'mf': '72rem'
       },
       zIndex: {
         '-10': '-10'
